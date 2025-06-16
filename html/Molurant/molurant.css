@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(17, 17, 17);
+    padding: 20px;
+}
+
+header h1,
+header p {
+    display: inline;
+}
+
+header h1 {
+    text-align: left;
+    font-family: valorant, sans-serif;
+    font-size: 2.5em;
+    color: #ffffff;
+    margin: 0;
+}
+
+main {
+    background-color: rgb(235, 231, 226);
+}
+
+.footer {
+    background-color: #23272a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.OLURANT,
+.OLURANT:visited,
+.OLURANT:focus,
+.OLURANT:active {
+    text-decoration: none;
+    outline: none;
+}
+
+.logo {
+    transform: translate(-0.2em, 0.47em);
+    width: 12em;
+    height: auto;
+    display: inline;
+}
+
+.frontM {
+    color: #ff4654;
+}
+
+.slogun {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: #f5f5f5;
+}
+
+header div,
+header div:visited {
+    display: inline-block;
+    background-color: #23272a;
+    border-radius: 5px;
+    height: 3em;
+    margin-left: 1em;
+    padding: 0.5em;
+}
+
+header div:hover {
+    background-color: #ff4654;
+    transition: 0.5s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.panneltext,
+.panneltext:visited {
+    padding: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ffffff;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-align: center;
+}
+
+.underBackground{
+    margin-top: 50px;
+}
+
+.title {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+}
+
+.title h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+}
+
+.news {
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    gap: 20px; /* 이미지와 텍스트 사이 간격 */
+    align-items: flex-start; /* 텍스트 위로 정렬 */
+}
+
+.supernova {
+    width: 100%;         /* 항상 부모의 너비에 맞게 */
+    max-width: 700px;    /* 너무 커지지 않게 */
+    height: auto;        /* 비율 유지 */
+    border-radius: 10px;
+    display: block;      /* 가운데 정렬 위해 필요 */
+    margin: 0 auto;
+}
+
+.defythelimits {
+    width: 100%;         /* 항상 부모의 너비에 맞게 */
+    max-width: 1515px;    /* 너무 커지지 않게 */
+    height: auto;        /* 비율 유지 */
+    display: block;      /* 가운데 정렬 위해 필요 */
+    margin: 0 auto;
+}
+
+.newsText {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 600px; /* 필요 시 너비 제한 */
+}
+
+.newsText h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.newsText p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block; /* 필요 시 block or flex로 바꿔도 OK */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+}
+
+.supernovaText {
+    font-family: DINNextW1G, Inter, sans-serif;
+}
+
+.WeAreMolurant {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.WeAreMolurant img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.WeAreMolurantText {
+    position: absolute;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    top: 45%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: left;
+    max-width: 600px;
+}
+
+.wearemoluranttitle {
+    font-size: 5em;
+    margin-bottom: 0.3em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-bottom: 1em;
+}
+
+.article {
+    font-family: DINNextW1G, Inter, sans-serif;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.gamePlayImage {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    max-width: 600px;
+    max-height: 338px;
+    transform: translate(10%, -50%);
+}
+
+.student_bg {
+    position: inherit;
+    width: 100%;
+    height: auto;
+}
+
+.wakamo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, 290%);
+    width: 28%;
+    height: auto;
+}
+
+.al1s {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, 315%);
+    width: 30%;
+    height: auto;
+}
+
+.StudentText {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translateY(105em)
+}
+
+.StudentText h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5em;
+    transform: translateX(1.6em);
+}
+
+.StudentText h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transform: translateX(7em);
+}
+
+.StudentText p {
+    font-family: DINNextW1G, Inter, sans-serif;
+    transform: translate(8.2em, 2em);
+}
+
+.yourMap {
+    width: 100%;
+    height: auto;
+    position: inherit;
+}
+
+.yourMapText {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translateY(150em)
+}
+
+.yourMapText h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5.5em;
+    transform: translate(-7.65em, -0.1em);
+}
+
+.yourMapText h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    transform: translate(-42rem, -1rem);
+}
+
+.yourMapText p {
+    font-family: DINNextW1G, Inter, sans-serif;
+    transform: translate(-42rem, 1rem);
+}

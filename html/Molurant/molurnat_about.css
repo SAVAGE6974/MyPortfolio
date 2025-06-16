@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(17, 17, 17);
+    padding: 20px;
+}
+
+img {
+    display: block;
+}
+
+main {
+    background-color: rgb(17, 25, 34);
+}
+
+footer {
+    background-color: rgb(17, 17, 17);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1,
+header p {
+    display: inline;
+}
+
+header h1 {
+    text-align: left;
+    font-family: valorant, sans-serif;
+    font-size: 2.5em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.OLURANT,
+.OLURANT:visited,
+.OLURANT:focus,
+.OLURANT:active {
+    text-decoration: none;
+    outline: none;
+}
+
+
+.frontM {
+    color: #ff4654;
+}
+
+.slogun {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: #f5f5f5;
+}
+
+header div,
+header div:visited {
+    display: inline-block;
+    background-color: #23272a;
+    border-radius: 5px;
+    height: 3em;
+    margin-left: 1em;
+    padding: 0.5em;
+}
+
+header div:hover {
+    background-color: #ff4654;
+    transition: 0.5s;
+}
+
+.panneltext,
+.panneltext:visited {
+    padding: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ffffff;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-align: center;
+}
+
+.aboutBlack {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.aboutBlacktext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -200%);
+    color: rgb(235, 231, 226);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5em;
+    text-align: center;
+}
+
+.mainText {
+    margin-left: 5em;
+}
+
+.mainText h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f5f5;
+    font-size: 2em;
+}
+
+.mainText p {
+    font-family: DINNextW1G, Inter, sans-serif;
+    color: #f5f5f5;
+    font-size: 1em;
+    margin-left: 1%;
+}
+
+.mainText h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #f5f5f5;
+    margin-left: 1%;
+}
