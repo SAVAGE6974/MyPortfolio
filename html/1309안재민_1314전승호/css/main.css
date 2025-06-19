@@ -1,5 +1,62 @@
+/* 전체 초기화 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* 헤더 스타일 */
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #A7C7E7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* 로고 */
+.logo {
+    height: 40px;
+}
+
+/* 로그인/회원가입 영역 */
+.log_in {
+    display: flex;
+    align-items: center;
+}
+
+.login, .signup {
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.login:hover, .signup:hover {
+    text-decoration: underline;
+}
+
+/* nav 메뉴: 헤더 아래 따로 */
+.main-menu {
+    width: 100%;
+    background-color: #F0F8FF;
+    padding: 10px 20px;
+}
+
+.main-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.main-menu a:hover {
+    color: #0077cc;
 }
