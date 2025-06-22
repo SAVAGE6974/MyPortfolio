@@ -17,6 +17,10 @@ header {
     padding: 0 20px;
 }
 
+main {
+    background-color: #f5f5f5;
+}
+
 /* 로고 */
 .logo {
     height: 40px;
@@ -61,13 +65,19 @@ header {
     color: #0077cc;
 }
 
-/* 
 
-이미지 스타일
+
+/* 이미지 스타일 */
 
 .main-image {
     width: 100%;
     height: auto;
     background-size: cover;
     background-position: center;
-} */
+}
+
+.theLastest {
+    /* padding: 20px; */
+    background-color: #f5f5f5;
+    /* leftMargin과 padding 단위 바꿔야함 */
+}
