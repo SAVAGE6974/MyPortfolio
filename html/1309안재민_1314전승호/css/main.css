@@ -1,9 +1,31 @@
+/* 반응형 */
+@media (max-width: 1024px) {
+    .table_box {
+        width: 48%;
+    }
+}
+
+@media (max-width: 600px) {
+    .table_box {
+        width: 100%;
+    }
+}
+
 /* 전체 초기화 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;          /* 부모의 글자 색상 따라감 */
+    text-decoration: none;   /* 밑줄 제거 */
+}
+
 
 /* 헤더 스타일 */
 header {
@@ -42,7 +64,7 @@ main {
     text-decoration: underline;
 }
 
-/* nav 메뉴: 헤더 아래 따로 */
+/* nav 메뉴 */
 .main-menu {
     width: 100%;
     background-color: #F0F8FF;
@@ -65,10 +87,7 @@ main {
     color: #0077cc;
 }
 
-
-
 /* 이미지 스타일 */
-
 .main-image {
     width: 100%;
     height: auto;
@@ -76,8 +95,81 @@ main {
     background-position: center;
 }
 
+/* 최신 섹션 전체 */
 .theLastest {
-    /* padding: 20px; */
     background-color: #f5f5f5;
-    /* leftMargin과 padding 단위 바꿔야함 */
+    margin-top: 2%;
+    padding: 2%;
+}
+
+/* 제목 */
+.theLastest h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    margin-left: 10rem;
+}
+
+.latest-content-cap {
+    font-size: 1.5rem;
+    margin-left: 10rem;
+}
+
+/* 설명 */
+.theLastest p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    
+}
+
+.theLastest a {
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 카드 영역 */
+.lastest_table {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2%; /* 카드 간 간격 */
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* 각 카드 */
+.table_box {
+    width: 30%;
+    background-color: white;
+    padding: 1%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* 카드 이미지 */
+.first_img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* 카드 제목 */
+.table_box h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0.3rem;
+}
+
+.theLastest a:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    background-color: #A7C7E7;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
 }
