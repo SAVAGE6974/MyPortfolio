@@ -119,7 +119,7 @@ main {
 .theLastest p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .theLastest a {
@@ -161,9 +161,11 @@ main {
     margin: 0.5rem 0 0.3rem;
 }
 
-.theLastest a:hover {
+/* table_box에 hover 효과 주기 */
+.table_box:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 footer {
