@@ -9,3 +9,43 @@ a {
     text-decoration: none;
     color: #0077cc;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    margin: 0;
+}
+
+.container {
+    width: 25em;
+    height: 30em;
+    border: 2px solid #ccc; /* 테두리 굵기, 스타일, 색상 */
+    border-radius: 10px;     /* 테두리 둥글게 */
+    background-color: #f9f9f9;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    width: 275px;
+    font-size: 1em;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

@@ -9,6 +9,17 @@
     .table_box {
         width: 100%;
     }
+    
+    .theLastest h1 {
+        width: 40%;
+        text-align: center;
+    }
+
+    .latest-content-cap {
+        width: 40%;
+        text-align: center;
+        margin-left: none;
+    }
 }
 
 /* 전체 초기화 */
@@ -169,8 +180,8 @@ main {
     height: auto;
     display: block;
     border-radius: 4px;
-    padding-top: 11%;
-    padding-bottom: 11%;
+    padding-top: 13%;
+    padding-bottom: 13%;
 }
 
 /* 카드 제목 */
