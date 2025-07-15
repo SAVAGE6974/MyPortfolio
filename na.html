@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <title>나의 한 줄 일기</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #fff;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    input[type="date"],
+    input[type="text"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    button {
+        background-color: #007BFF; /* 좀 더 진한 파란색 */
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        width: 100%;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3; /* hover 시 더 진한 파란색 */
+        transform: translateY(-2px); /* 살짝 위로 떠오름 */
+    }
+
+    button:active {
+        background-color: #004a9f; /* 눌렸을 때 색상 */
+        transform: translateY(1px); /* 살짝 눌린 듯한 느낌 */
+    }
+
+    /* 연속 기록 메시지를 위한 새 스타일 */
+    #streakMessage {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #007BFF; /* 멋진 파란색 */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>나의 한 줄 일기 ✍️</h1>
+    <div id="streakMessage"></div> <form id="diaryForm">
+      <label for="diaryDate">날짜:</label>
+      <input type="date" id="diaryDate" name="diaryDate" required>
+
+      <label for="diaryTitle">일기 제목:</label>
+      <input type="text" id="diaryTitle" name="diaryTitle" placeholder="오늘의 일기 제목을 입력하세요" required>
+
+      <label for="diaryContent">일기 내용:</label>
+      <textarea id="diaryContent" name="diaryContent" placeholder="오늘 하루는 어땠나요?" required></textarea>
+
+      <button type="submit" id="saveButton">일기 저장</button>
+    </form>
+    </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 오늘 날짜 자동으로 설정
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+      const dd = String(today.getDate()).padStart(2, '0');
+      document.getElementById('diaryDate').value = `${yyyy}-${mm}-${dd}`;
+
+      const form = document.getElementById('diaryForm');
+      const saveButton = document.getElementById('saveButton'); // 버튼 엘리먼트 가져오기
+      const originalButtonText = saveButton.textContent; // 원래 버튼 텍스트 저장
+      const streakMessageDiv = document.getElementById('streakMessage'); // 연속 기록 메시지 div
+
+      // 연속 작성일 메시지를 업데이트하는 함수
+      function updateConsecutiveDaysMessage() {
+        google.script.run
+          .withSuccessHandler(function(consecutiveDays) {
+            if (consecutiveDays > 0) {
+              streakMessageDiv.textContent = `벌써 ${consecutiveDays}일째 일기를 썼어요! 🎉`;
+            } else {
+              streakMessageDiv.textContent = ''; // 연속 기록이 없으면 메시지 지우기
+            }
+          })
+          .withFailureHandler(function(error) {
+            console.error('연속 일기 작성일 가져오기 실패:', error.message);
+            streakMessageDiv.textContent = '일기 연속 기록을 불러오는 데 실패했습니다.';
+          })
+          .getConsecutiveDiaryDays(); // 서버 측 함수 호출
+      }
+
+      // 초기 로드 시: 연속 작성일 메시지 업데이트
+      updateConsecutiveDaysMessage();
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // 기본 폼 제출 방지
+
+        // 1. 버튼 텍스트를 '저장 중'으로 변경
+        saveButton.textContent = '저장 중...';
+        saveButton.disabled = true; // 버튼 비활성화 (중복 클릭 방지)
+
+        const diaryData = {
+          date: document.getElementById('diaryDate').value,
+          title: document.getElementById('diaryTitle').value,
+          content: document.getElementById('diaryContent').value
+        };
+
+        google.script.run
+          .withSuccessHandler(function(msg) {
+            // 폼 초기화 (날짜는 그대로 두고 제목과 내용만)
+            document.getElementById('diaryTitle').value = '';
+            document.getElementById('diaryContent').value = '';
+
+            // 저장 성공 후 연속 작성일 메시지 업데이트
+            updateConsecutiveDaysMessage();
+
+            // 2. 저장 완료 후 1초 동안 '저장 완료'로 변경
+            saveButton.textContent = '저장 완료! ✨';
+            setTimeout(function() {
+              // 3. 1초 후 원래 텍스트로 돌아오고 버튼 활성화
+              saveButton.textContent = originalButtonText;
+              saveButton.disabled = false;
+            }, 1000); // 1000밀리초 = 1초
+          })
+          .withFailureHandler(function(error) {
+            // 저장 실패 시 사용자에게 피드백을 주고 싶다면 alert 등을 사용할 수 있습니다.
+            alert('저장 실패: ' + error.message);
+
+            // 실패 시에도 버튼 원래 텍스트로 돌아오고 활성화
+            saveButton.textContent = originalButtonText;
+            saveButton.disabled = false;
+          })
+          .saveDiary(diaryData);
+      });
+    });
+  </script>
+</body>
+</html>
